@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Via Brasil | Niche and Luxury Perfume Distributor</title>
     
-    <meta name="description" content="Importer and distributor of luxury and niche perfumery in Ciudad del Este, Paraguay. We represent over 40 global brands for B2B regional channels. Founded in 1993.">
-    <meta name="keywords" content="Via Brasil, Perfume Importer, Perfume Distributor, Niche Perfumes, Ciudad del Este, Paraguay, B2B Perfumes, Nishane, Boadicea, David Jacob">
+    <meta name="description" content="Importer and distributor of luxury and niche perfumery in Ciudad del Este, Paraguay. We represent over 40 global brands for Mayorista regional channels. Founded in 1993.">
+    <meta name="keywords" content="Via Brasil, Perfume Importer, Perfume Distributor, Niche Perfumes, Ciudad del Este, Paraguay, Mayorista Perfumes, Nishane, Boadicea, David Jacob">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph (SEO) -->
     <meta property="og:title" content="Via Brasil | Luxury & Niche Perfume Importer">
-    <meta property="og:description" content="Official distributor of the world's most prestigious brands in Paraguay and regional B2B channels. Solid representation since 1993 with exclusive curatorship.">
+    <meta property="og:description" content="Official distributor of the world's most prestigious brands in Paraguay and regional Mayorista channels. Solid representation since 1993 with exclusive curatorship.">
     <meta property="og:image" content="../images/hero-perfume.jpg">
     <meta property="og:type" content="website">
 
     <!-- Language Alternatives (SEO Hreflang) -->
-    <link rel="alternate" hreflang="pt" href="https://viabrasil.com.py/pt/index.html">
     <link rel="alternate" hreflang="es" href="https://viabrasil.com.py/es/index.html">
     <link rel="alternate" hreflang="en" href="https://viabrasil.com.py/en/index.html">
 
@@ -27,6 +26,7 @@
     <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
 
     <!-- CSS stylesheet -->
+    <link rel="icon" type="image/svg+xml" href="../Logo/favicon.svg">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -42,16 +42,13 @@
                 <ul class="nav-menu">
                     <li><a href="#header" class="nav-link">Home</a></li>
                     <li><a href="#about" class="nav-link">About Us</a></li>
-                    <li><a href="#categories" class="nav-link">What We Do</a></li>
                     <li><a href="#brands" class="nav-link">Brands</a></li>
-                    <li><a href="#products" class="nav-link">Highlights</a></li>
                     <li><a href="#news" class="nav-link">Events</a></li>
-                    <li><a href="#contact" class="nav-link">B2B Contact</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
             
             <div class="lang-selector">
-                <button class="lang-btn" data-lang="pt">PT</button>
                 <button class="lang-btn" data-lang="es">ES</button>
                 <button class="lang-btn active" data-lang="en">EN</button>
                 
@@ -99,40 +96,37 @@
             </svg>
         </div>
 
-        <!-- Slide 1: Hero Media Section (Canvas sequence only) -->
+        <!-- Slide 1: Hero Carousel Section -->
         <section class="hero stack-slide" id="hero-section">
-            <!-- Canvas for scroll-driven 3D image sequence animation -->
-            <canvas id="hero-canvas"></canvas>
-            
-            <!-- Static fallback for fast loading -->
-            <div class="hero-static-fallback" id="canvas-fallback" style="display: none;">
-                <img src="../images/hero-perfume.jpg" alt="Luxury Perfumery" class="hero-fallback-img">
-            </div>
-            
-            <!-- Animated Scroll Down Indicator -->
-            <div class="scroll-indicator">
-                <span class="scroll-text">Scroll to explore</span>
-                <div class="scroll-arrow">
-                    <svg viewBox="0 0 24 36" width="20" height="30" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="5" y="3" width="14" height="30" rx="7" />
-                        <line x1="12" y1="9" x2="12" y2="15" stroke-linecap="round" class="scroll-wheel" />
-                    </svg>
-                </div>
-            </div>
-        </section>
-
-        <!-- Slide 2: Hero Text Layer (Slides up over the Canvas) -->
-        <section class="hero-text-slide stack-slide" id="hero-text-section">
-            <div class="container">
-                <div class="hero-text-content">
-                    <span class="hero-label">Premium & Niche Distribution</span>
-                    <h1 class="hero-title">The Essence of Luxury Perfumery</h1>
-                    <p class="hero-description">Since 1993, Via Brasil connects the world's most prestigious and exclusive brands to elite distributors and corporate channels in Latin America.</p>
-                    <div class="hero-buttons">
-                        <a href="#brands" class="btn btn-primary">Our Brands</a>
-                        <a href="#contact" class="btn btn-secondary">B2B Partnership</a>
+            <div class="hero-carousel-wrapper">
+                <div class="hero-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('../images/distribution-b2b.jpg');">
+                    <div class="hero-slide-caption">
+                        <span class="hero-badge">Corporate Events</span>
+                        <h2>Leadership & Presence at Major Exhibitions</h2>
                     </div>
                 </div>
+                <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('../images/hero-perfume.jpg');">
+                    <div class="hero-slide-caption">
+                        <span class="hero-badge">Exclusive Launches</span>
+                        <h2>New High Perfumery Collections</h2>
+                    </div>
+                </div>
+                <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('../images/niche-perfume.jpg');">
+                    <div class="hero-slide-caption">
+                        <span class="hero-badge">Exclusivity & Niche</span>
+                        <h2>International Artistic Fragrances</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Carousel Controls -->
+            <button class="carousel-arrow prev-slide" aria-label="Previous">&#10094;</button>
+            <button class="carousel-arrow next-slide" aria-label="Next">&#10095;</button>
+            
+            <div class="carousel-indicators">
+                <span class="indicator-dot active" data-slide="0"></span>
+                <span class="indicator-dot" data-slide="1"></span>
+                <span class="indicator-dot" data-slide="2"></span>
             </div>
         </section>
 
@@ -145,7 +139,7 @@
                         <h2 class="section-title">Official Partner for Global Brands in the Region</h2>
                         <p>Founded in <strong>1993</strong> by businessman <strong>David Jacob</strong> (commencing retail activities in the 1980s), <strong>Via Brasil</strong> has established itself as the leading importer and distributor of luxury and niche perfumery in Paraguay.</p>
                         <p>Headquartered in the prestigious <strong>Via Brasil Building</strong> in the center of Ciudad del Este, we operate state-of-the-art temperature-controlled storage, guaranteeing the chemical integrity of the finest olfactive creations.</p>
-                        <p>Our model is strictly <strong>B2B and institutional</strong>: we represent brands at trade fairs, educate the specialized market, and guide the final consumer to authorized retail channels.</p>
+                        <p>Our model is strictly <strong>Mayorista and institutional</strong>: we represent brands at trade fairs, educate the specialized market, and guide the final consumer to authorized retail channels.</p>
                         
                         <div class="about-features">
                             <div class="feature-item">
@@ -169,50 +163,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Slide 3: Categories / What We Do Section -->
-        <section class="categories stack-slide" id="categories">
-            <div class="container">
-                <div class="categories-header">
-                    <div>
-                        <span class="section-label">What We Do</span>
-                        <h2 class="section-title">Perfumery Segments</h2>
-                    </div>
-                    <p style="color: var(--text-secondary); max-width: 500px;">We operate under a model that values the integrity of the brands we import, dividing our portfolio into two high-relevance segments in the premium market.</p>
-                </div>
-                
-                <div class="categories-grid">
-                    <!-- Category 1 -->
-                    <div class="category-card" data-open-modal="modal-niche">
-                        <img src="../images/niche-perfume.jpg" alt="Niche Perfumery" class="category-card-bg">
-                        <div class="category-card-overlay"></div>
-                        <div class="category-card-content">
-                            <span class="category-label">Artistic Exclusivity</span>
-                            <h3 class="category-title">Niche Fragrances</h3>
-                            <p class="category-description">Rare creations developed by independent perfumers, characterized by artistic accords, Oud, Amber, and limited releases.</p>
-                            <a href="#" class="category-btn">Learn More <span>&rarr;</span></a>
-                        </div>
-                    </div>
-                    
-                    <!-- Category 2 -->
-                    <div class="category-card" data-open-modal="modal-luxury">
-                        <img src="../images/luxury-perfume.jpg" alt="Luxury Perfumery" class="category-card-bg">
-                        <div class="category-card-overlay"></div>
-                        <div class="category-card-content">
-                            <span class="category-label">Global Prestige</span>
-                            <h3 class="category-title">Luxury Perfumery</h3>
-                            <p class="category-description">Fragrances signed by the world's greatest fashion houses, with strong luxury demand and sophisticated aesthetic appeal.</p>
-                            <a href="#" class="category-btn">Learn More <span>&rarr;</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-    </div> <!-- End Stacking Slides Wrapper -->
-
-    <!-- Scrollable Content starts here (Slides up over sticky sections) -->
-    <div class="scrollable-content">
 
         <!-- Slide 2.5: Interactive Stats Section -->
         <section class="stats-section">
@@ -255,143 +205,127 @@
                 <div class="brands-header">
                     <span class="section-label">Our Brands</span>
                     <h2 class="section-title">Luxury Portfolio & Distribution</h2>
-                    <p>We work only with the finest global partners. Click on a brand logo to visit their official website.</p>
+                    <p>We strictly select the best global partners. Switch between Niche or Luxury brands.</p>
+                </div>
+
+                <!-- Brand Category Filters -->
+                                                <div class="brand-filters" style="margin-bottom: 30px; text-align: center;">
+                    <button class="filter-btn active" data-filter="all">All Brands</button>
+                    <button class="filter-btn" data-filter="nicho">Niche Perfumery</button>
+                    <button class="filter-btn" data-filter="arabes">Arabic Lines</button>
+                    <button class="filter-btn" data-filter="comerciales">Commercial Brands</button>
+                    <button class="filter-btn" data-filter="cosmetica">Cosmetics</button>
                 </div>
                 
-                <div class="brands-grid">
-                    <!-- Brand 1: Boadicea -->
-                    <a href="https://www.boadiceaperfume.com/" target="_blank" rel="noopener" class="brand-card">
-                        <img src="../Marcas/Boadecia.jpg" alt="Boadicea the Victorious" class="brand-logo">
+                                                                <div class="brands-grid">
+                    <a href="brands.html" class="brand-card" data-category="nicho" title="Alexandre.J">
+                        <img src="../Marcas/alexandre-j.png" alt="Alexandre.J" class="brand-logo" loading="lazy">
                     </a>
-                    
-                    <!-- Brand 2: Nusuk -->
-                    <a href="https://nusukperfumes.com/" target="_blank" rel="noopener" class="brand-card">
-                        <img src="../Marcas/Nusuk.jpeg" alt="Nusuk Perfumes" class="brand-logo">
+                    <a href="brands.html" class="brand-card" data-category="nicho" title="Boadicea the Victorious">
+                        <img src="../Marcas/boadicea-the-victorious.png" alt="Boadicea the Victorious" class="brand-logo" loading="lazy">
                     </a>
-                    
-                    <!-- Brand 3: Amaran -->
-                    <a href="https://www.parfumo.com/Brands/Amaran" target="_blank" rel="noopener" class="brand-card">
-                        <img src="../Marcas/amaran.png" alt="Amaran" class="brand-logo">
+                    <a href="brands.html" class="brand-card" data-category="nicho" title="Birkholz">
+                        <img src="../Marcas/birkholz.png" alt="Birkholz" class="brand-logo" loading="lazy">
                     </a>
-                    
-                    <!-- Brand 4: Birkholz -->
-                    <a href="https://www.birkholz-perfumes.com/" target="_blank" rel="noopener" class="brand-card">
-                        <img src="../Marcas/birkholz.webp" alt="Birkholz" class="brand-logo">
+                    <a href="brands.html" class="brand-card" data-category="nicho" title="Coreterno">
+                        <img src="../Marcas/coreterno.png" alt="Coreterno" class="brand-logo" loading="lazy">
                     </a>
-                    
-                    <!-- Brand 5: Coreterno -->
-                    <a href="https://www.coreterno.com/" target="_blank" rel="noopener" class="brand-card">
-                        <img src="../Marcas/coreterno.webp" alt="Coreterno" class="brand-logo">
+                    <a href="brands.html" class="brand-card" data-category="nicho" title="Emirates Pride">
+                        <img src="../Marcas/emirates-pride.png" alt="Emirates Pride" class="brand-logo" loading="lazy">
                     </a>
-                    
-                    <!-- Brand 6: Emirates Pride -->
-                    <a href="https://emiratespride.com/" target="_blank" rel="noopener" class="brand-card">
-                        <img src="../Marcas/emirates-pride.webp" alt="Emirates Pride" class="brand-logo">
+                    <a href="brands.html" class="brand-card" data-category="nicho" title="Juliette Has a Gun">
+                        <img src="../Marcas/juliette-has-a-gun.png" alt="Juliette Has a Gun" class="brand-logo" loading="lazy">
                     </a>
-                    
-                    <!-- Brand 7: Riiffs -->
-                    <a href="http://www.riiffsperfumes.com/" target="_blank" rel="noopener" class="brand-card">
-                        <img src="../Marcas/riiffs.png" alt="Riiffs" class="brand-logo">
+                    <a href="brands.html" class="brand-card" data-category="nicho" title="Memo Paris">
+                        <img src="../Marcas/memo-paris.png" alt="Memo Paris" class="brand-logo" loading="lazy">
                     </a>
-                    
-                    <!-- Brand 8: Simone Andreoli -->
-                    <a href="https://www.simoneandreoli.com/" target="_blank" rel="noopener" class="brand-card">
-                        <img src="../Marcas/simone-andreoli.webp" alt="Simone Andreoli" class="brand-logo">
+                    <a href="brands.html" class="brand-card" data-category="nicho" title="Nishane">
+                        <img src="../Marcas/nishane.png" alt="Nishane" class="brand-logo" loading="lazy">
                     </a>
-                    
-                    <!-- Brand 9: Spirit of Kings -->
-                    <a href="https://thespiritofkings.com/" target="_blank" rel="noopener" class="brand-card">
-                        <img src="../Marcas/spirit-of-king.webp" alt="The Spirit of Kings" class="brand-logo">
+                    <a href="brands.html" class="brand-card" data-category="nicho" title="Simone Andreoli">
+                        <img src="../Marcas/simone-andreoli.png" alt="Simone Andreoli" class="brand-logo" loading="lazy">
                     </a>
-                    
-                    <!-- Brand 10: The Merchant of Venice -->
-                    <a href="https://www.themerchantofvenice.com/" target="_blank" rel="noopener" class="brand-card">
-                        <img src="../Marcas/the-merchant.png" alt="The Merchant of Venice" class="brand-logo">
+                    <a href="brands.html" class="brand-card" data-category="nicho" title="Sospiro">
+                        <img src="../Marcas/sospiro.png" alt="Sospiro" class="brand-logo" loading="lazy">
+                    </a>
+                    <a href="brands.html" class="brand-card" data-category="arabes" title="Adyan">
+                        <img src="../Marcas/adyan.png" alt="Adyan" class="brand-logo" loading="lazy">
+                    </a>
+                    <a href="brands.html" class="brand-card" data-category="arabes" title="Al Wataniah">
+                        <img src="../Marcas/al-wataniah.png" alt="Al Wataniah" class="brand-logo" loading="lazy">
+                    </a>
+                    <a href="brands.html" class="brand-card" data-category="arabes" title="Amaran">
+                        <img src="../Marcas/amaran.png" alt="Amaran" class="brand-logo" loading="lazy">
+                    </a>
+                    <a href="brands.html" class="brand-card" data-category="arabes" title="Nusuk">
+                        <img src="../Marcas/nusuk.png" alt="Nusuk" class="brand-logo" loading="lazy">
+                    </a>
+                    <a href="brands.html" class="brand-card" data-category="arabes" title="Rasasi - Hawas">
+                        <img src="../Marcas/rasasi-hawas.png" alt="Rasasi - Hawas" class="brand-logo" loading="lazy">
+                    </a>
+                    <a href="brands.html" class="brand-card" data-category="arabes" title="Riiffs">
+                        <img src="../Marcas/riiffs.png" alt="Riiffs" class="brand-logo" loading="lazy">
+                    </a>
+                    <a href="brands.html" class="brand-card" data-category="comerciales" title="Animale">
+                        <img src="../Marcas/animale.png" alt="Animale" class="brand-logo" loading="lazy">
+                    </a>
+                    <a href="brands.html" class="brand-card" data-category="comerciales" title="Gisada">
+                        <img src="../Marcas/gisada.png" alt="Gisada" class="brand-logo" loading="lazy">
+                    </a>
+                    <a href="brands.html" class="brand-card" data-category="comerciales" title="Mercedes Benz">
+                        <img src="../Marcas/mercedes-benz.png" alt="Mercedes Benz" class="brand-logo" loading="lazy">
+                    </a>
+                    <a href="brands.html" class="brand-card" data-category="cosmetica" title="Topface">
+                        <img src="../Marcas/topface.png" alt="Topface" class="brand-logo" loading="lazy">
                     </a>
                 </div>
-                
+
                 <div class="brands-footer">
-                    <a href="brands.html" class="btn btn-secondary">View Full Portfolio (+40 Brands)</a>
+                    <a href="brands.html" class="btn btn-primary">View Full Portfolio (64 Brands)</a>
                 </div>
             </div>
         </section>
 
-        <!-- Infinite Logo Marquee (Premium Ticker) -->
+        <!-- Infinite Logo Marquee (Continuous Loop) -->
         <div class="marquee-container">
             <div class="marquee-content">
                 <!-- Set 1 -->
-                <div class="marquee-item"><img src="../Marcas/Boadecia.jpg" alt="Boadicea" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/Nusuk.jpeg" alt="Nusuk" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/amaran.png" alt="Amaran" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/birkholz.webp" alt="Birkholz" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/coreterno.webp" alt="Coreterno" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/emirates-pride.webp" alt="Emirates Pride" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/riiffs.png" alt="Riiffs" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/simone-andreoli.webp" alt="Simone Andreoli" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/spirit-of-king.webp" alt="The Spirit of Kings" class="marquee-logo"></div>
-                <!-- Set 2 -->
-                <div class="marquee-item"><img src="../Marcas/Boadecia.jpg" alt="Boadicea" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/Nusuk.jpeg" alt="Nusuk" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/amaran.png" alt="Amaran" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/birkholz.webp" alt="Birkholz" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/coreterno.webp" alt="Coreterno" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/emirates-pride.webp" alt="Emirates Pride" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/riiffs.png" alt="Riiffs" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/simone-andreoli.webp" alt="Simone Andreoli" class="marquee-logo"></div>
-                <div class="marquee-item"><img src="../Marcas/spirit-of-king.webp" alt="The Spirit of Kings" class="marquee-logo"></div>
+                <div class="marquee-item" title="Alexandre.J"><img src="../Marcas/alexandre-j.png" alt="Alexandre.J" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Boadicea the Victorious"><img src="../Marcas/boadicea-the-victorious.png" alt="Boadicea the Victorious" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Nishane"><img src="../Marcas/nishane.png" alt="Nishane" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Simone Andreoli"><img src="../Marcas/simone-andreoli.png" alt="Simone Andreoli" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Memo Paris"><img src="../Marcas/memo-paris.png" alt="Memo Paris" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Juliette Has a Gun"><img src="../Marcas/juliette-has-a-gun.png" alt="Juliette Has a Gun" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Emirates Pride"><img src="../Marcas/emirates-pride.png" alt="Emirates Pride" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Birkholz"><img src="../Marcas/birkholz.png" alt="Birkholz" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Nusuk"><img src="../Marcas/nusuk.png" alt="Nusuk" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Rasasi - Hawas"><img src="../Marcas/rasasi-hawas.png" alt="Rasasi - Hawas" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Riiffs"><img src="../Marcas/riiffs.png" alt="Riiffs" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Amaran"><img src="../Marcas/amaran.png" alt="Amaran" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Animale"><img src="../Marcas/animale.png" alt="Animale" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Gisada"><img src="../Marcas/gisada.png" alt="Gisada" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Mercedes Benz"><img src="../Marcas/mercedes-benz.png" alt="Mercedes Benz" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Topface"><img src="../Marcas/topface.png" alt="Topface" class="marquee-logo" loading="lazy"></div>
+                <!-- Set 2 (Seamless loop) -->
+                <div class="marquee-item" title="Alexandre.J"><img src="../Marcas/alexandre-j.png" alt="Alexandre.J" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Boadicea the Victorious"><img src="../Marcas/boadicea-the-victorious.png" alt="Boadicea the Victorious" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Nishane"><img src="../Marcas/nishane.png" alt="Nishane" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Simone Andreoli"><img src="../Marcas/simone-andreoli.png" alt="Simone Andreoli" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Memo Paris"><img src="../Marcas/memo-paris.png" alt="Memo Paris" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Juliette Has a Gun"><img src="../Marcas/juliette-has-a-gun.png" alt="Juliette Has a Gun" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Emirates Pride"><img src="../Marcas/emirates-pride.png" alt="Emirates Pride" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Birkholz"><img src="../Marcas/birkholz.png" alt="Birkholz" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Nusuk"><img src="../Marcas/nusuk.png" alt="Nusuk" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Rasasi - Hawas"><img src="../Marcas/rasasi-hawas.png" alt="Rasasi - Hawas" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Riiffs"><img src="../Marcas/riiffs.png" alt="Riiffs" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Amaran"><img src="../Marcas/amaran.png" alt="Amaran" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Animale"><img src="../Marcas/animale.png" alt="Animale" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Gisada"><img src="../Marcas/gisada.png" alt="Gisada" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Mercedes Benz"><img src="../Marcas/mercedes-benz.png" alt="Mercedes Benz" class="marquee-logo" loading="lazy"></div>
+                <div class="marquee-item" title="Topface"><img src="../Marcas/topface.png" alt="Topface" class="marquee-logo" loading="lazy"></div>
             </div>
         </div>
 
-        <!-- Olfactory Matcher Quiz Section -->
-        <section class="olfactory-matcher">
-            <div class="container">
-                <div class="matcher-card">
-                    <span class="section-label">Olfactory Matcher</span>
-                    <h2 class="matcher-title">Find Your Signature Scent</h2>
-                    <p class="matcher-subtitle">Select an olfactory family below to discover the exclusive fragrances and brands in our portfolio that represent this identity.</p>
-                    
-                    <div class="matcher-options">
-                        <!-- Option 1 -->
-                        <button class="option-btn" data-family="woody">
-                            <span class="option-icon">🪵</span>
-                            <span class="option-name">Woody</span>
-                            <span class="option-desc">Oud, Sandalwood & Rare Spices</span>
-                        </button>
-                        
-                        <!-- Option 2 -->
-                        <button class="option-btn" data-family="citrus">
-                            <span class="option-icon">🍋</span>
-                            <span class="option-name">Fresh</span>
-                            <span class="option-desc">Citrus, Rosemary & Marine Notes</span>
-                        </button>
-                        
-                        <!-- Option 3 -->
-                        <button class="option-btn" data-family="floral">
-                            <span class="option-icon">🌸</span>
-                            <span class="option-name">Floral</span>
-                            <span class="option-desc">Iris, Rose & Sweet Vanilla</span>
-                        </button>
-                        
-                        <!-- Option 4 -->
-                        <button class="option-btn" data-family="oriental">
-                            <span class="option-icon">✨</span>
-                            <span class="option-name">Oriental</span>
-                            <span class="option-desc">Rich Amber, Ylang-Ylang & Myrrh</span>
-                        </button>
-                    </div>
-                    
-                    <!-- Results Grid -->
-                    <div class="matcher-results" id="matcher-results">
-                        <h3 class="results-title">Exclusive Recommendations</h3>
-                        <div class="results-grid" id="results-grid">
-                            <!-- Injected dynamically via JS -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Store Locator Section -->
         <section class="store-locator" id="store-locator">
             <div class="container">
                 <div class="locator-container">
@@ -512,72 +446,6 @@
             </div>
         </section>
 
-        <!-- B2B Product Highlights Showcase Section (Instead of E-commerce shop, focused on product details) -->
-        <section class="product-showcase" id="products">
-            <div class="container">
-                <div class="product-showcase-header">
-                    <div>
-                        <span class="section-label">Portfolio Highlights</span>
-                        <h2 class="section-title">Signature Fragrances</h2>
-                    </div>
-                    <p style="color: var(--text-secondary); max-width: 500px;">We present iconic fragrances from our official import portfolio, recognized globally for olfactive excellence.</p>
-                </div>
-
-                <div class="product-showcase-grid">
-                    <!-- Product 1 -->
-                    <div class="product-showcase-card">
-                        <div class="product-showcase-image-wrapper">
-                            <img src="../images/niche-perfume.jpg" alt="Boadicea the Victorious" class="product-showcase-img">
-                        </div>
-                        <div class="product-showcase-info">
-                            <span class="product-showcase-brand">Boadicea the Victorious</span>
-                            <h3 class="product-showcase-name">Nocturne Ambre</h3>
-                            <p class="product-showcase-desc">An artistic niche fragrance combining rare amber resins, black vanilla, and woody notes of oud, encapsulated in a bottle decorated with handcrafted gold filigree.</p>
-                            <div class="product-showcase-notes">
-                                <span class="product-showcase-tag">Amber</span>
-                                <span class="product-showcase-tag">Oud</span>
-                                <span class="product-showcase-tag">Niche</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 2 -->
-                    <div class="product-showcase-card">
-                        <div class="product-showcase-image-wrapper">
-                            <img src="../images/luxury-perfume.jpg" alt="Aurora Luxury" class="product-showcase-img">
-                        </div>
-                        <div class="product-showcase-info">
-                            <span class="product-showcase-brand">Simone Andreoli</span>
-                            <h3 class="product-showcase-name">Aurora Crystal</h3>
-                            <p class="product-showcase-desc">Inspired by polar light, this fragrance offers a crystalline citrus freshness with floral nuances of magnolia and a soft base of white musk and noble sandalwood.</p>
-                            <div class="product-showcase-notes">
-                                <span class="product-showcase-tag">Floral</span>
-                                <span class="product-showcase-tag">Magnolia</span>
-                                <span class="product-showcase-tag">Fresh</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 3 -->
-                    <div class="product-showcase-card">
-                        <div class="product-showcase-image-wrapper">
-                            <img src="../images/hero-perfume.jpg" alt="Nocturne d'Or" class="product-showcase-img">
-                        </div>
-                        <div class="product-showcase-info">
-                            <span class="product-showcase-brand">The Merchant of Venice</span>
-                            <h3 class="product-showcase-name">Nocturne d'Or</h3>
-                            <p class="product-showcase-desc">A majestic composition inspired by Venetian spice routes. Features fine leather, cardamom, precious saffron, and a rich oriental base of patchouli and cedar.</p>
-                            <div class="product-showcase-notes">
-                                <span class="product-showcase-tag">Spices</span>
-                                <span class="product-showcase-tag">Leather</span>
-                                <span class="product-showcase-tag">Oriental</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Events & News Section -->
         <section class="news" id="news">
             <div class="container">
@@ -647,50 +515,6 @@
             </div>
         </section>
 
-        <!-- B2B Call to Action & Pre-Registration -->
-        <section class="b2b-cta">
-            <div class="container b2b-container">
-                <div class="b2b-content">
-                    <h2>Become an Authorized Retailer</h2>
-                    <p>If you own a selective perfume store, boutique perfumery, or operate in duty-free and airport channels, complete your B2B registration for evaluation by our sales team.</p>
-                    <div style="display: flex; gap: 24px; align-items: center; margin-top: 30px;">
-                        <div style="text-align: center;">
-                            <span style="font-size: 28px; font-weight: bold; color: var(--color-gold-dark); display: block;">40+</span>
-                            <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary);">Official Brands</span>
-                        </div>
-                        <div style="width: 1px; height: 40px; background-color: var(--border-light);"></div>
-                        <div style="text-align: center;">
-                            <span style="font-size: 28px; font-weight: bold; color: var(--color-gold-dark); display: block;">100%</span>
-                            <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary);">Authenticity</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="pre-reg-form">
-                    <h3>B2B Pre-Registration</h3>
-                    <p>Fill in your company details for credit and sales analysis.</p>
-                    <form id="b2b-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Company Name / Trade Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Corporate ID / Tax ID" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Corporate Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Phone / WhatsApp" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Briefly describe your point of sale and brands of interest..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit Request</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
         <!-- Contact Section -->
         <section class="contact-section" id="contact">
             <div class="container contact-grid">
@@ -726,20 +550,31 @@
                 </div>
                 
                 <div class="contact-form-panel">
-                    <h3>Talk to Our Directors</h3>
-                    <p>Send a direct message to Via Brasil's management.</p>
-                    <form id="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <p>Fill out the form below and we will get back to you shortly.</p>
+                    <form id="contact-form" enctype="multipart/form-data">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Full Name" required>
+                            <input type="text" id="contact-name" class="form-control" placeholder="Full Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" required>
+                            <input type="email" id="contact-email" class="form-control" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject" required>
+                            <select id="contact-subject" class="form-control" required style="appearance: auto; background-color: var(--bg-primary);">
+                                <option value="" disabled selected>Select Subject...</option>
+                                <option value="comercial">Commercial</option>
+                                <option value="fornecedor">Supplier</option>
+                                <option value="trabalhe-conosco">Careers / Submit Resume</option>
+                                <option value="suporte">Support</option>
+                                <option value="outros">Others</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message..." required></textarea>
+                            <label style="display: block; font-size: 13px; margin-bottom: 6px; color: var(--text-secondary);">Attach File / Presentation / CV (Optional):</label>
+                            <input type="file" id="contact-file" class="form-control" accept=".pdf,.doc,.docx,.jpg,.png" style="padding: 8px;">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contact-message" class="form-control" placeholder="Your Message..." rows="4" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
@@ -751,12 +586,11 @@
         <footer class="footer">
             <div class="container footer-grid">
                 <div class="footer-col-info">
-                    <img src="../Logo/isotipo-black.svg" alt="Via Brasil Logo" class="footer-logo">
+                    <img src="../Logo/isotipo-white.svg" alt="Via Brasil Logo" class="footer-logo">
                     <p>Official importer and distributor of niche and selective luxury fragrances since 1993.</p>
                     <div class="social-links">
-                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">IG</a>
-                        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">FB</a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">LN</a>
+                        <a href="https://www.instagram.com/viabrasil" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">IG</a>
+                        <a href="https://www.linkedin.com/company/via-brasil" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">LN</a>
                     </div>
                 </div>
                 
@@ -767,12 +601,12 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="brands.html">Our Brands</a></li>
                         <li><a href="news.html">Fairs & Events</a></li>
-                        <li><a href="contact.html">B2B Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h4>B2B Channels</h4>
+                    <h4>Mayorista Channels</h4>
                     <ul class="footer-links">
                         <li><a href="#categories">Niche Fragrances</a></li>
                         <li><a href="#categories">Luxury Perfumery</a></li>
@@ -818,7 +652,7 @@
         </div>
         <div class="modal-body">
             <p>Niche perfumery represents the pinnacle of artistic expression in fragrance. These brands work outside the mass marketing circuit, focusing on the absolute quality of ingredients, the perfumer's creative freedom, and striking narrative concepts.</p>
-            <p><strong>Our B2B commercial approach:</strong> We provide official representation and support for boutique stores, premium perfumeries, and luxury spaces in shopping centers. We do not sell retail directly or digitally; each interested party is directed to regional authorized retailers' channels.</p>
+            <p><strong>Our Mayorista commercial approach:</strong> We provide official representation and support for boutique stores, premium perfumeries, and luxury spaces in shopping centers. We do not sell retail directly or digitally; each interested party is directed to regional authorized retailers' channels.</p>
             <p style="font-weight: 600; color: var(--color-charcoal); margin-top: 16px;">Key portfolio niche brands:</p>
             <ul class="modal-brands-list">
                 <li>Boadicea</li>
@@ -838,7 +672,7 @@
         </div>
         <div class="modal-body">
             <p>Luxury perfumery hosts iconic brands of global prestige. Combining haute couture, sophisticated bottle designs, and worldwide recognition, these fragrances form the core pillar of the prestige market and enjoy strong demand from a select public.</p>
-            <p><strong>Our B2B commercial approach:</strong> We guarantee a continuous flow of authentic imports, full customs clearance with legal security, and large-scale regional distribution with exclusive commercial conditions.</p>
+            <p><strong>Our Mayorista commercial approach:</strong> We guarantee a continuous flow of authentic imports, full customs clearance with legal security, and large-scale regional distribution with exclusive commercial conditions.</p>
             <p style="font-weight: 600; color: var(--color-charcoal); margin-top: 16px;">Featured luxury and distribution brands:</p>
             <ul class="modal-brands-list">
                 <li>Nusuk</li>
@@ -854,3 +688,4 @@
     <script src="../js/main.js"></script>
 </body>
 </html>
+

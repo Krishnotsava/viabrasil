@@ -8,7 +8,6 @@
     
     <!-- SEO Language Alternatives -->
     <link rel="alternate" hreflang="x-default" href="https://viabrasil.com.py/" />
-    <link rel="alternate" hreflang="pt" href="https://viabrasil.com.py/pt/" />
     <link rel="alternate" hreflang="es" href="https://viabrasil.com.py/es/" />
     <link rel="alternate" hreflang="en" href="https://viabrasil.com.py/en/" />
 
@@ -51,27 +50,25 @@
         (function() {
             var preferredLanguage;
             try {
-                // Check if language preference is stored (wrapped in try-catch to avoid crashing on file:// protocol)
                 preferredLanguage = localStorage.getItem('via_brasil_lang');
             } catch (e) {
                 console.warn('localStorage is blocked:', e);
             }
             
             if (!preferredLanguage) {
-                // Auto-detect browser language
-                var browserLang = navigator.language || navigator.userLanguage || 'en';
+                var browserLang = navigator.language || navigator.userLanguage || 'es';
                 browserLang = browserLang.toLowerCase();
                 
-                if (browserLang.startsWith('pt')) {
-                    preferredLanguage = 'pt';
-                } else if (browserLang.startsWith('es')) {
-                    preferredLanguage = 'es';
+                if (browserLang.startsWith('en')) {
+                    preferredLanguage = 'en';
                 } else {
-                    preferredLanguage = 'en'; // Default fallback
+                    preferredLanguage = 'es'; // Default fallback
                 }
             }
+            if (preferredLanguage !== 'en' && preferredLanguage !== 'es') {
+                preferredLanguage = 'es';
+            }
             
-            // Perform redirect
             window.location.replace('./' + preferredLanguage + '/index.html');
         })();
     </script>

@@ -106,11 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mark active language button on load based on current path
     const currentPath = window.location.pathname;
-    let currentLang = 'pt'; // default fallback
-    if (currentPath.includes('/es/')) {
-        currentLang = 'es';
-    } else if (currentPath.includes('/en/')) {
+    let currentLang = 'es'; // default fallback
+    if (currentPath.includes('/en/')) {
         currentLang = 'en';
+    } else if (currentPath.includes('/pt/')) {
+        currentLang = 'pt';
+    } else if (currentPath.includes('/es/')) {
+        currentLang = 'es';
     }
     
     langBtns.forEach(btn => {
@@ -120,6 +122,68 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.remove('active');
         }
     });
+
+    // ==========================================================================
+    // HERO CAROUSEL LOGIC
+    // ==========================================================================
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroDots = document.querySelectorAll('.indicator-dot');
+    const prevBtn = document.querySelector('.prev-slide');
+    const nextBtn = document.querySelector('.next-slide');
+    let currentSlide = 0;
+    let carouselInterval;
+
+    if (heroSlides.length > 0) {
+        const showSlide = (index) => {
+            heroSlides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            heroDots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+            currentSlide = index;
+        };
+
+        const nextSlideAction = () => {
+            const next = (currentSlide + 1) % heroSlides.length;
+            showSlide(next);
+        };
+
+        const prevSlideAction = () => {
+            const prev = (currentSlide - 1 + heroSlides.length) % heroSlides.length;
+            showSlide(prev);
+        };
+
+        if (nextBtn) nextBtn.addEventListener('click', () => { nextSlideAction(); resetTimer(); });
+        if (prevBtn) prevBtn.addEventListener('click', () => { prevSlideAction(); resetTimer(); });
+
+        heroDots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-slide'));
+                showSlide(index);
+                resetTimer();
+            });
+        });
+
+        const startTimer = () => {
+            carouselInterval = setInterval(nextSlideAction, 5000);
+        };
+
+        const resetTimer = () => {
+            clearInterval(carouselInterval);
+            startTimer();
+        };
+
+        startTimer();
+    }
 
     // ==========================================================================
     // 4. ACTIVE LINK ON SCROLL (INTERSECTION OBSERVER)
@@ -195,10 +259,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================================================
-    // 6. BRAND FILTERS & SEARCH (brands.html)
+    // 6. BRAND FILTERS & SEARCH (index.html & brands.html)
     // ==========================================================================
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const brandCards = document.querySelectorAll('.brand-detail-card');
+    const brandCards = document.querySelectorAll('.brand-detail-card, .brand-card');
     
     if (filterButtons.length > 0 && brandCards.length > 0) {
         filterButtons.forEach(button => {
@@ -212,8 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 brandCards.forEach(card => {
                     const cardCategory = card.getAttribute('data-category');
                     if (filterValue === 'all' || cardCategory === filterValue) {
-                        card.style.display = 'flex';
-                        // Add fade animation
+                        card.style.display = card.classList.contains('brand-card') ? 'flex' : 'flex';
                         card.style.opacity = '0';
                         setTimeout(() => {
                             card.style.opacity = '1';
@@ -230,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // 7. B2B FORM VALIDATION & SIMULATION
     // ==========================================================================
-    const contactForm = document.getElementById('b2b-contact-form');
+    const contactForms = document.querySelectorAll('#b2b-contact-form, #contact-form');
     const newsletterForm = document.getElementById('newsletter-form');
     const preRegForm = document.getElementById('prereg-form');
     
@@ -257,35 +320,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+    contactForms.forEach(form => {
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
             
             // Basic fields validation
-            const name = document.getElementById('contact-name').value.trim();
-            const email = document.getElementById('contact-email').value.trim();
-            const company = document.getElementById('contact-company').value.trim();
-            const msg = document.getElementById('contact-message').value.trim();
+            const nameEl = form.querySelector('#contact-name, input[type="text"]');
+            const emailEl = form.querySelector('#contact-email, input[type="email"]');
+            const companyEl = form.querySelector('#contact-company');
+            const msgEl = form.querySelector('#contact-message, textarea');
+            
+            const name = nameEl ? nameEl.value.trim() : '';
+            const email = emailEl ? emailEl.value.trim() : '';
+            const company = companyEl ? companyEl.value.trim() : '';
+            const msg = msgEl ? msgEl.value.trim() : '';
             
             if (!name || !email || !msg) {
                 const errTitle = currentLang === 'pt' ? 'Erro' : (currentLang === 'es' ? 'Error' : 'Error');
-                const errMsg = currentLang === 'pt' ? 'Por favor, preencha todos os campos obrigatórios (*).' : (currentLang === 'es' ? 'Por favor, complete todos los campos obligatorios (*).' : 'Please fill in all required fields (*).');
+                const errMsg = currentLang === 'es' ? 'Por favor, complete todos los campos obligatorios (*).' : 'Please fill in all required fields (*).';
                 showNotification(errTitle, errMsg);
                 return;
             }
             
-            // Simulate B2B success submission
-            const successTitle = currentLang === 'pt' ? 'Contato Recebido' : (currentLang === 'es' ? 'Contacto Recibido' : 'Message Sent');
-            const successMsg = currentLang === 'pt' 
-                ? `Obrigado, ${name}! Recebemos a solicitação da empresa <strong>${company || 'Não especificada'}</strong>. Nosso departamento de distribuição B2B retornará em breve no e-mail: ${email}.`
-                : (currentLang === 'es' 
-                    ? `¡Gracias, ${name}! Hemos recibido la solicitud de la empresa <strong>${company || 'No especificada'}</strong>. Nos comunicaremos con usted a la brevedad al correo: ${email}.`
-                    : `Thank you, ${name}! We have received the inquiry from <strong>${company || 'Not specified'}</strong>. Our B2B distribution team will respond shortly to: ${email}.`);
+            // Simulate commercial success submission
+            const successTitle = currentLang === 'es' ? 'Mensaje Enviado' : 'Message Sent';
+            const successMsg = currentLang === 'es' 
+                ? `¡Gracias, ${name}! Hemos recibido su mensaje${company ? ' de la empresa <strong>' + company + '</strong>' : ''}. Nos comunicaremos con usted a la brevedad al correo: ${email}.`
+                : `Thank you, ${name}! We have received your message${company ? ' from <strong>' + company + '</strong>' : ''}. Our team will respond shortly to: ${email}.`;
             
             showNotification(successTitle, successMsg);
-            contactForm.reset();
+            form.reset();
         });
-    }
+    });
     
     if (preRegForm) {
         preRegForm.addEventListener('submit', (e) => {
@@ -295,12 +361,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (!email || !name) return;
             
-            const successTitle = currentLang === 'pt' ? 'Cadastro Confirmado' : (currentLang === 'es' ? 'Registro Confirmado' : 'Registration Confirmed');
-            const successMsg = currentLang === 'pt' 
-                ? `Parabéns, ${name}! Seu e-mail (${email}) foi cadastrado com sucesso. Você receberá atualizações exclusivas sobre o lançamento do nosso E-commerce B2B (2025/2026).`
-                : (currentLang === 'es' 
-                    ? `¡Felicitaciones, ${name}! Su correo (${email}) ha sido registrado con éxito. Recibirá novedades exclusivas sobre el lanzamiento de nuestro E-commerce B2B (2025/2026).`
-                    : `Congratulations, ${name}! Your email (${email}) has been registered. You will receive exclusive updates about our upcoming B2B E-commerce platform (2025/2026).`);
+            const successTitle = currentLang === 'es' ? 'Registro Confirmado' : 'Registration Confirmed';
+            const successMsg = currentLang === 'es' 
+                ? `¡Felicitaciones, ${name}! Su correo (${email}) ha sido registrado con éxito. Recibirá novedades exclusivas de nuestro catálogo oficial.`
+                : `Congratulations, ${name}! Your email (${email}) has been registered. You will receive exclusive updates about our official catalog.`;
                     
             showNotification(successTitle, successMsg);
             preRegForm.reset();
@@ -325,62 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ==========================================================================
-    // 7. HERO CANVAS IMAGE SEQUENCE SCROLL ANIMATION
-    // ==========================================================================
-    const heroCanvas = document.getElementById('hero-canvas');
-    if (heroCanvas) {
-        const ctx = heroCanvas.getContext('2d');
-        const frameCount = 192;
-        
-        // Path helper
-        const currentFrame = index => `../assets/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`;
-        
-        // Preload first frame
-        const firstFrameImg = new Image();
-        firstFrameImg.src = currentFrame(1);
-        firstFrameImg.onload = () => {
-            heroCanvas.width = firstFrameImg.naturalWidth;
-            heroCanvas.height = firstFrameImg.naturalHeight;
-            ctx.drawImage(firstFrameImg, 0, 0);
-        };
-        
-        // Preload array
-        const images = [];
-        let loadedCount = 0;
-        
-        // Load all frames
-        for (let i = 1; i <= frameCount; i++) {
-            const img = new Image();
-            img.src = currentFrame(i);
-            img.onload = () => {
-                loadedCount++;
-            };
-            images.push(img);
-        }
-        
-        const renderFrame = index => {
-            const image = images[index - 1];
-            if (image && image.complete) {
-                ctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
-                ctx.drawImage(image, 0, 0);
-            }
-        };
-        
-        // Update frame index based on page scroll
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            const maxScroll = window.innerHeight;
-            const scrollFraction = Math.min(1, Math.max(0, scrollTop / maxScroll));
-            
-            const frameIndex = Math.min(
-                frameCount,
-                Math.ceil(scrollFraction * frameCount) || 1
-            );
-            
-            requestAnimationFrame(() => renderFrame(frameIndex));
-        });
-    }
+    // (Old canvas script removed for clean Hero Carousel banner)
 
     // ==========================================================================
     // 8. STATS COUNTER ANIMATION (Intersection Observer)
